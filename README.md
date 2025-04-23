@@ -47,4 +47,111 @@
 | JobScheduler       | 系统调度，大任务（有条件限制）     |
 | Foreground Service | 必须让用户看到的后台活动           |
 
+# Service
+
+## 1️⃣ 什么是 Service？
+### ✅ Service 是 Android 四大组件之一。
+（Activity / Service / BroadcastReceiver / ContentProvider）
+一句话总结：
+
+Service 是在后台长时间执行任务的 Android 组件，没有界面。
+
+### 为什么需要 Service？
+
+比如这些情况：
+	• 播放音乐时，用户切到别的 App，音乐还要继续放 🎵
+	• 使用导航 App，屏幕锁定后仍能持续定位 🧭
+	• 云端同步，比如备份照片 ☁️
+
+这些任务如果放在 Activity 里，Activity一关掉，任务就没了。
+所以需要用 Service —— 让任务独立于界面，在后台继续运行。
+
+⸻
+## 2️⃣ Service 分类
+
+| 类型               | 描述                                       | 示例                         |
+| ------------------ | ------------------------------------------ | ---------------------------- |
+| Foreground Service | 用户知道它在运行（通知栏有通知）            | 导航 App、音乐播放器         |
+| Background Service | 用户不可见的后台执行                        | 自动同步                     |
+| Bound Service      | 允许其他应用或组件绑定到这个 Service 上交互 | 音乐播放管理器（比如控制播放暂停） |
+
+## 3️⃣ Service 的生命周期（基础版）
+
+你需要知道，Service 也是有生命周期方法的，常用这三个：
+| 方法           | 作用                                             |
+| --------------- | ------------------------------------------------ |
+| `onCreate()`    | 第一次创建时调用（只调用一次）                   |
+| `onStartCommand()` | 每次通过 `startService()` 调用时执行主要逻辑     |
+| `onDestroy()`   | `Service` 被销毁时调用（比如手动停止或者系统回收） |
+
+startService() → onCreate() → onStartCommand() → ... → onDestroy()
+
+另外对于 Bound Service，还有：
+	•	onBind()
+	•	onUnbind()
+
+## 4️⃣ 官方强提醒：Background Service限制！
+
+从 Android 8.0 (API 26) 开始，
+✅ 系统对后台 Service 有了严格限制：
+
+如果 App 在后台（没有任何可见的 Activity），
+❗ 不能随便启动 Background Service了！
+
+如果一定要后台长时间运行，必须用 Foreground Service（带通知栏通知）。
+
+如果要使用 Foreground Service（比如后台播放音乐、后台下载），
+✅ 必须调用 startForeground() 方法，并且显示一个通知(Notification)！
+
+Client → startService() → onCreate() + onStartCommand()
+      → Service在后台跑
+Client → stopService() 或 Service自己stopSelf()
+      → onDestroy()
+      
+如果是 Bound Service，则是：
+
+Client → bindService() → onBind() → 客户端和 Service 可以通信
+      
+Client → unbindService() → onUnbind()
+
+## 5️⃣ 怎么使用 Service？（非常基础的使用）
+
+第一步：写一个类继承 Service
+
+```kotlin
+class MyService : Service() {
+    override fun onCreate() {
+        super.onCreate()
+        // 初始化，比如准备播放器
+    }
+
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        // 主要工作，比如开始播放音乐
+        return START_STICKY
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        // 收尾，比如停止播放器
+    }
+
+    override fun onBind(intent: Intent?): IBinder? {
+        return null  // 如果是普通 Service 返回 null
+    }
+}
+```
+
+第二步：在 AndroidManifest.xml 注册 Service
+```xml
+<service android:name=".MyService" />
+```
+
+第三步：从 Activity 启动 Service
+```kotlin
+val intent = Intent(this, MyService::class.java)
+startService(intent)
+```
+
+
+
 
