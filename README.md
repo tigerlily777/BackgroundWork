@@ -48,7 +48,7 @@
 | Foreground Service | 必须让用户看到的后台活动           |
 
 # Service
-
+## Service 学习路线 - Android service - 见 [Service 复习笔记]([https://github.com/tigerlily777/android-service-cheatbook/wiki/About-Handler-%E2%80%90-%E9%80%9F%E8%AF%BB](https://github.com/tigerlily777/android-service-cheatbook/wiki/Home-%E2%80%90-Service-%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0))
 ## 1️⃣ 什么是 Service？
 ### ✅ Service 是 Android 四大组件之一。
 （Activity / Service / BroadcastReceiver / ContentProvider）
@@ -309,4 +309,4 @@ App 调用 startService() →
         → stopSelf() → Service 结束
 
 
-## Handler 学习路线 - 轻量两日通关版（精讲+练习）- 见[About Handler ‐ 速读](https://github.com/tigerlily777/android-service-cheatbook/wiki/About-Handler-%E2%80%90-%E9%80%9F%E8%AF%BB)
+## Handler 学习路线 - 轻量两日通关版（精讲+练习）- 见 [About Handler ‐ 速读](https://github.com/tigerlily777/android-service-cheatbook/wiki/About-Handler-%E2%80%90-%E9%80%9F%E8%AF%BB)
