@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CountdownDemo</string>
+    <string name="start_countdown">Start Countdown</string>
+    <string name="ready">Ready</string>
+</resources>
