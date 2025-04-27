@@ -309,4 +309,4 @@ App 调用 startService() →
         → stopSelf() → Service 结束
 
 
-## Handler 学习路线 - 轻量两日通关版（精讲+练习）- 见wiki
+## Handler 学习路线 - 轻量两日通关版（精讲+练习）- 见[About Handler ‐ 速读](https://github.com/tigerlily777/android-service-cheatbook/wiki/About-Handler-%E2%80%90-%E9%80%9F%E8%AF%BB)
