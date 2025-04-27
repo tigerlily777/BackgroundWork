@@ -309,3 +309,4 @@ App 调用 startService() →
         → stopSelf() → Service 结束
 
 
+## Handler 学习路线 - 轻量两日通关版（精讲+练习）- 见wiki
