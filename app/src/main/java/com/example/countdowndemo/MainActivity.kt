@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     private val countdownRunnable = object : Runnable {
         override fun run() {
             if (count > 0) {
-                startButton.isEnabled = false
+                //startButton.isEnabled = false
                 countdownText.text = "$count"
                 count--
                 handler.postDelayed(this, 1000)
@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         countdownText = findViewById(R.id.countdownText)
 
         startButton.setOnClickListener {
+            startButton.isEnabled = false //it's better to disable the button here, immediately after click
             count = 5
             handler.post(countdownRunnable)
         }
