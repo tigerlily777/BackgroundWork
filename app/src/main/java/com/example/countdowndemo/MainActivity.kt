@@ -11,16 +11,19 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var handler: Handler
     private lateinit var countdownText: TextView
-    private var count = 3
+    private lateinit var startButton: Button
+    private var count = 5
 
     private val countdownRunnable = object : Runnable {
         override fun run() {
             if (count > 0) {
+                startButton.isEnabled = false
                 countdownText.text = "$count"
                 count--
                 handler.postDelayed(this, 1000)
             } else {
                 countdownText.text = "Start！🎉"
+                startButton.isEnabled = true
                 // 任务结束后不再post
             }
         }
@@ -32,11 +35,11 @@ class MainActivity : AppCompatActivity() {
 
         handler = Handler(Looper.getMainLooper())
 
-        val startButton = findViewById<Button>(R.id.startButton)
+        startButton = findViewById(R.id.startButton)
         countdownText = findViewById(R.id.countdownText)
 
         startButton.setOnClickListener {
-            count = 3
+            count = 5
             handler.post(countdownRunnable)
         }
     }
