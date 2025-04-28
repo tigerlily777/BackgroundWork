@@ -18,4 +18,11 @@
         android:text="@string/ready"
         android:textSize="24sp"
         android:layout_marginTop="24dp" />
+
+    <Button
+        android:id="@+id/startBackgroundTaskButton"
+        android:text="@string/start_background_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"/>
 </LinearLayout>
