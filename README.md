@@ -348,4 +348,4 @@ Service 本质上只是「生命周期容器」，真正干活的是自己开的
 
 
 ## Handler 学习路线 - 轻量两日通关版（精讲+练习）- 见 [About Handler ‐ 速读](https://github.com/tigerlily777/android-service-cheatbook/wiki/About-Handler-%E2%80%90-%E9%80%9F%E8%AF%BB)
-## [Handler quiz! see: ](https://github.com/tigerlily777/android-service-cheatbook/wiki/Handler-%E2%80%90-pop-quiz!)
+## Handler quick Q&A! [Handler quiz!](https://github.com/tigerlily777/android-service-cheatbook/wiki/Handler-%E2%80%90-pop-quiz!)
