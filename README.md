@@ -6,10 +6,10 @@
 	•	用户操作App的时候，不希望一切都卡在主线程上（比如下载、同步、备份）
 	•	有些工作需要在后台默默进行（比如推送更新、定时提醒、自动同步数据）
 
-简单说就是：「让设备在不打扰用户的情况下，悄悄做一些事情。」
+简单说就是：Make the device do some work quietly without bothering the users.
 
 比如：
-	•	你在用相册 App，但照片自动在后台上传到云端
+	•	when using photo App，the photoes are updated to cloud automatically at background
 	•	你在用笔记 App，笔记后台悄悄保存草稿
 	•	你下了个银行 App，它定时后台同步你的账户余额
 
