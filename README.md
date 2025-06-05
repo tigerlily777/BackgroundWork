@@ -347,7 +347,7 @@ Service 本质上只是「生命周期容器」，真正干活的是自己开的
 ⸻
 
 ## [Service notes entry](https://github.com/tigerlily777/android-service-cheatbook/wiki) 
-## Handler 学习路线 - 轻量两日通关版（精讲+练习）- 见 [About Handler ‐ 速读](https://github.com/tigerlily777/android-service-cheatbook/wiki/About-Handler-%E2%80%90-%E9%80%9F%E8%AF%BB)
+## Handler Learning path - lightweighted 2 day pass!（notes + Q&A）- See [About Handler ‐ Quick pass](https://github.com/tigerlily777/android-service-cheatbook/wiki/About-Handler-%E2%80%90-%E9%80%9F%E8%AF%BB)
 ## Handler quick Q&A! [Handler quiz!](https://github.com/tigerlily777/android-service-cheatbook/wiki/Handler-%E2%80%90-pop-quiz!)
 ## [Bound service](https://github.com/tigerlily777/android-service-cheatbook/wiki/Bound-service!)
 ## [Foreground service](https://github.com/tigerlily777/android-service-cheatbook/wiki/Foreground-services-overview)
