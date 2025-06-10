@@ -50,10 +50,8 @@
 # Service
 ## Service 学习路线 - Android service - 见 [Service 复习笔记](https://github.com/tigerlily777/android-service-cheatbook/wiki/Home-%E2%80%90-Service-%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0)
 ## 1️⃣ 什么是 Service？
-### ✅ Service 是 Android 四大组件之一。
-（Activity / Service / BroadcastReceiver / ContentProvider）
+### ✅ Service 是 Android 四大组件（Activity / Service / BroadcastReceiver / ContentProvider）之一。
 一句话总结：
-
 Service 是在后台长时间执行任务的 Android 组件，没有界面。
 
 ### 为什么需要 Service？
